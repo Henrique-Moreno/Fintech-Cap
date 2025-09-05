@@ -7,7 +7,7 @@ public class Main {
         System.out.println("=== Fintech de Viagens - Demonstração do Sistema ===");
         System.out.println();
 
-        // 1. Criando um Provedor de Serviço
+        // Criando um Provedor de Serviço
         System.out.println("1. Criando Provedor de Serviço:");
         ProvedorServico hotelSolEMar = new ProvedorServico("Hotel Sol e Mar", "00.111.222/0001-33", 4.5);
         System.out.printf(" - Nome Fantasia: %s%n", hotelSolEMar.getNome());
@@ -17,7 +17,7 @@ public class Main {
         hotelSolEMar.cadastrarOferta("Porto Seguro, BA", "20/03/2026", "27/03/2026", 1800.00);
         System.out.println();
 
-        // 2. Criando um Cliente
+        // Criando um Cliente
         System.out.println("2. Criando Cliente:");
         Cliente novoCliente = new Cliente("Maria Silva", "123.456.789-00", "maria@email.com", "senha123");
         System.out.printf(" - Nome: %s%n", novoCliente.getNome());
@@ -29,14 +29,14 @@ public class Main {
         novoCliente.buscarOfertas(viagensDisponiveis);
         System.out.println();
 
-        // 3. Criando uma Viagem
+        // Criando uma Viagem
         System.out.println("3. Criando Viagem:");
         Viagem viagemBahia = viagensDisponiveis.get(2); // Salvador, BA
         viagemBahia.exibirDetalhes();
         viagemBahia.aplicarDesconto(10.0);
         System.out.println();
 
-        // 4. Criando um Pagamento
+        // Criando um Pagamento
         System.out.println("4. Criando Pagamento:");
         Pagamento pagamentoViagem = novoCliente.realizarPagamento(viagemBahia, "Cartão de Crédito");
         if (pagamentoViagem != null) {
@@ -45,7 +45,7 @@ public class Main {
         }
         System.out.println();
 
-        // 5. Criando uma Reserva
+        // Criando uma Reserva
         System.out.println("5. Criando Reserva:");
         Reserva reserva = new Reserva("RES_1234", novoCliente, viagemBahia, pagamentoViagem, "Pendente");
         reserva.confirmarReserva();
@@ -57,20 +57,20 @@ public class Main {
         hotelSolEMar.visualizarReservas(reservas);
         System.out.println();
 
-        // 6. Criando uma Avaliação
+        // Criando uma Avaliação
         System.out.println("6. Criando Avaliação:");
         Avaliacao avaliacao = new Avaliacao(novoCliente, hotelSolEMar, 5, "Ótima experiência!", "05/09/2025");
         avaliacao.registrar();
         avaliacao.exibirAvaliacao();
         System.out.println();
 
-        // 7. Criando outra Avaliação para testar média
+        // Criando outra Avaliação para testar média
         System.out.println("7. Criando outra Avaliação:");
         Avaliacao avaliacao2 = new Avaliacao(novoCliente, hotelSolEMar, 4, "Boa estadia, mas pode melhorar.", "06/09/2025");
         avaliacao2.registrar();
         System.out.println();
 
-        // 8. Cancelando a Reserva
+        // Cancelando a Reserva
         System.out.println("8. Cancelando Reserva:");
         reserva.cancelarReserva();
         System.out.println();
